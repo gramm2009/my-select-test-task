@@ -11,4 +11,5 @@
 1. Находясь в папке *my-select-test-task* проекта, открыть терминал начать вводить команды:
 2. <code>cd select-backend/ && npm i && npm start</code>. 
 3. Дождитесь установки пакетов зависимостей. Бекенд приложение запущено!
-4. <code>cd .. && cd select-frontend/ && npm i && npm start</code>. Фронтенд приложение запущено!
+4. <code>cd .. && cd select-frontend/ && npm i && npm start</code>. 
+5. Дождитесь установки пакетов зависимостей. Фронтенд приложение запущено!
