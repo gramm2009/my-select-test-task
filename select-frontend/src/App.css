@@ -1,0 +1,24 @@
+.app{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.select-component{
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  width: 380px;
+  max-width: 800px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+}
+
+.select-component-controls{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 35px;
+}

@@ -1,0 +1,268 @@
+.custom-select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select {
+  position: relative;
+  width: 250px;
+  height: 35px;
+  border: 1px solid #f0f0f0;
+  border-radius: 0;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+.custom-select:focus,
+.custom-select:focus-within {
+  border-bottom-width: 2px;
+  border-bottom-color: #0066cc;
+}
+
+.custom-select.open {
+  border-bottom-width: 2px;
+  border-bottom-color: #0066cc;
+}
+
+.select-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  min-height: 36px;
+  box-sizing: border-box;
+}
+
+.select-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+}
+
+.select-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.select-input:read-only {
+  cursor: pointer;
+}
+
+.clear-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.clear-button:hover {
+  opacity: 1;
+}
+
+.clear-button:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-toggle:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Выпадающий список */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dropdown-menu.down {
+  top: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-menu.up {
+  bottom: 100%;
+  margin-bottom: -1px;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+.dropdown-content {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.dropdown-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: background-color 0.15s ease;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.dropdown-option.highlighted {
+  background-color: #e8e8e8;
+}
+
+.dropdown-option.selected {
+  background-color: #dedede;
+}
+
+.dropdown-option:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: -2px;
+}
+
+.dropdown-loading,
+.dropdown-error,
+.dropdown-empty {
+  padding: 16px 12px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.dropdown-error {
+  color: #d32f2f;
+}
+
+.dropdown-virtualized {
+  height: 250px;
+  position: relative;
+}
+
+.virtualized-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@keyframes dropdownAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu {
+  animation: dropdownAppear 0.2s ease;
+}
+
+.custom-select:focus-visible {
+  border-bottom-width: 2px;
+  border-bottom-color: #0066cc;
+}
+
+@media (max-width: 480px) {
+  .custom-select {
+    width: 100%;
+  }
+  
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .custom-select {
+    border-color: #000;
+  }
+  
+  .custom-select.open,
+  .custom-select:focus {
+    border-color: #0066cc;
+    border-width: 2px;
+  }
+  
+  .dropdown-option:hover,
+  .dropdown-option.highlighted,
+  .dropdown-option.selected {
+    outline: 2px solid #0066cc;
+  }
+}

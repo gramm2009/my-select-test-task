@@ -1,0 +1,9 @@
+{
+  "api": {
+    "baseUrl": "http://localhost:5000",
+    "endpoints": {
+      "getOptions": "/options/for/select",
+      "submitOption": "/selected/option"
+    }
+  }
+}
