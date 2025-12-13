@@ -282,7 +282,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                   
                   return (
                     <div
-                      key={option.value}
+                      key={`${option.value}-${option.name}`}
                       ref={(el) => {
                         optionRefs.current[index] = el;
                       }}

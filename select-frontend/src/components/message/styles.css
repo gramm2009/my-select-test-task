@@ -2,4 +2,8 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: rgb(0, 0, 0);
+  width: 380px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
